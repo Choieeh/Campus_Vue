@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang = "ko">
+	
+	<head>
+		<meta charset = "UTF-8">
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content = "ie=edge">
+		<title>Vue test</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<style>
+			.box {
+				width : 200px;
+				height : 150px;
+				background : red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id = "app">
+			<button @click="toggle">
+				Toggle
+			</button>
+			<div v-show = "show" class = "box"> <!-- v-if는 할때마다 요소가 사라졌다가 생겼다가 하지만 v-show는 요소가 존재하지만 display : none을 시켜버리는것-->
+				
+			</div>
+			<div :class = "{box : show}">
+				
+			</div>
+		</div>
+		<script>
+			const vm = new Vue ({
+				el : '#app',
+				data : {
+					show : false
+				},
+				methods : {
+					toggle () {
+						this.show = !this.show
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
