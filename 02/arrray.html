@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang = "ko">
+	
+	<head>
+		<meta charset = "UTF-8">
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content = "ie=edge">
+		<title>Vue test</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div id = "app">
+			<button @click = "pushTodo">
+				push
+			</button>
+			<ul class = "todos">
+				<li v-for = "(todo, index) in todos"
+					:key = "index">
+					{{ todo.title }}
+				</li>
+			</ul>
+			<button @click = "addHomepage">addHomepage</button>
+			<ul class = "heropy">
+				<li v-for="(v, key, index) in heropy"
+					:key = "">
+				{{v}}
+				</li>
+			</ul>
+		</div>
+		<script>
+			const vm = new Vue({
+				el : '#app',
+				data : {
+					todos : [
+						{ title : '아침 먹기'},
+						{ title : '점심 먹기'},
+						{ title : '저녁 먹기'}
+					],
+					heropy : {
+						name : 'HEORPY',
+						age : 23,
+						homepage : ''
+					}
+				},
+				methods : {
+					pushTodo () {
+						//this.todos[3] = {title : '야식먹기'}
+						//그냥 배열에 때려 박으면 반응성 인정 x 해서 데이터 출력이 안돼
+						//this.todos.push({title : '야식먹기'})
+						Vue.set(this.todos, 3, {title : '야식먹기!'})
+					//	=this.$set(this.todos, 3, {title : '야식먹기!'})
+					},
+					addHomepage() {
+						this.$set(this.heropy, 'homepage', 'heropy.blog')
+					}
+				},
+				
+			})
+		</script>
+	</body>
+</html>
