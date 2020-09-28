@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang = "ko">
+	
+	<head>
+		<meta charset = "UTF-8">
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content = "ie=edge">
+		<title>Vue test</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div id = "app">
+			<input type = "text" @input = "bindMessage" :value="message">
+			{{message}}
+		</div>
+		<div id = "app2">
+			<input type = "text" v-model.number = "message">
+			<div>
+				{{message}}
+			</div>
+			<div>
+				{{typeof message}}
+			</div>
+		</div>
+		<script>
+			const vm = new Vue({
+				el : '#app',
+				data : {
+					message : 'Hello~'
+				},
+				methods: {
+					bindMessage (event) {
+						this.message = event.target.value
+					}
+				}
+			})
+			
+			const vm2 = new Vue({
+				el : '#app2',
+				data : {
+					message : 'HEllo World~'
+				}
+			})
+		</script>
+	</body>
+</html>
