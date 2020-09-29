@@ -29,7 +29,7 @@
 		</div>
 		<script>
 			Vue.component('my-todo-item', {
-				props : ['todo'],
+				props : ['todo'], //부모가 자식에게 data보낼땐 props 자식의 data를 부모한테 보낼땐 event
 				template: `<li>
 					<input type = "checkbox" v-model="todo.done">
 					<span v-bind:class="{done : todo.done}">{{todo.title}}</span>
