@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang = "ko">
+	
+	<head>
+		<meta charset = "UTF-8">
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content = "ie=edge">
+		<title>Vue test</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div id = "app">
+			<my-component :msg="message" @my-event="updateMessage"></my-component>
+		</div>
+		<div id = "app1">
+			<my-component/>
+		</div>
+		<div id = "app2">
+			<my-comp/>
+		</div>
+		<script>
+			const myComp = {
+				template : '<div class="me">{{message}}</div>',
+				data: function () {
+					return {
+						message : 'Hello Vue!'
+					}
+				}
+			} //지역변수
+			Vue.component('my-component', {
+				template: '<div @click="updateMsg">{{msg}}</div>',
+				props: {
+					msg: {
+						type: [String, Number],
+						default: 'Default!',
+						required: true,
+						//validator: function (value) {
+						//	return value === 'Hello'
+						}
+					},
+				methods: {
+					updateMsg() {
+						this.$emit('my-event', 'Good') = 'Good' //부모 요소로 my-event라는 이벤트 전달 값은 Good
+					}
+				}
+				
+			})
+			const vm = new Vue({
+				el : '#app',
+				data() {
+					return {
+						message : 'Hello1'
+					}
+				},
+				methods: {
+					updateMessage (value) {
+						this.message = value
+					}
+				}
+			})
+			const vm1 = new Vue({
+				el : '#app1',
+				components: { //component를 이용해서 지역 등록
+					'my-component' : myComp
+				}
+			})
+			
+			const vm2 = new Vue({
+				el : '#app2',
+				components: {
+					myComp
+				}
+			})
+		</script>
+	</body>
+</html>
