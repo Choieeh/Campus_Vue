@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+   <style>
+       html{
+           scroll-behavior: smooth;
+           text-align: center;
+​
+       }
+       body{
+           margin: 0;
+           padding:0;
+       }
+       nav{
+           width: 100%;
+           background: #262626;
+           position: fixed;
+           overflow: hidden;
+           top: 0;
+       }
+       ul{
+           padding: 0;
+           margin: 0%;
+           list-style:none;
+       }
+       li{
+           float: left;
+       }
+       a{
+           padding: 20px;
+           width: 100px;
+           display: block;
+           text-decoration: none;
+           color:#ffff;
+           text-transform: uppercase;
+           font-weight: bold;
+       }
+       #section1{
+           height: 1000px;
+           background: pink;
+           display: inline-block;
+           width: 100%;
+       }
+       #section2{
+           height: 1000px;
+           background: yellow;
+           display: inline-block;
+           width: 100%;
+       }
+       #section3{
+           height: 1000px;
+           background: red;
+           display: inline-block;
+           width: 100%;
+       }
+       #section4{
+           height: 1000px;
+           background: orange;
+           display: inline-block;
+           width: 100%;
+       }
+       #seection4.box{
+           float: left;
+       }
+       #section5{
+           height: 1000px;
+           background: royalblue;
+           display: inline-block;
+           width: 100%;
+       }
+       h1{
+           margin:100px;
+           text-align: center;
+           padding: 0;
+       }
+       #temporary_img_box{
+           text-align: center;
+           border: solid 1px gray;
+           
+       }
+       
+   </style>
+</head>
+<body>
+   
+   <nav>
+       <ul>
+           <li><a href="#section1">Home</a></li>
+           <li><a href="#section2">화면1</a></li>
+           <li><a href="#section3">화면2</a></li>
+           <li><a href="#section4">화면3</a></li>
+           <li><a href="#section5">화면4</a></li>
+       </ul>
+   </nav>
+   
+   <div>
+       <div id="section1">
+           <h1>HOME화면</h1>
+           <div id="temporary_img_box">
+               <h2><이번주의 정신전력 교육></h2>
+               <img src="https://picsum.photos/536/354" width="50%" height="50%" alt="임시사진">
+               <h3>그림이나 텍스트를 누르면 그에 해당하는 페이지로 이동하게 구현할 생각</h3><br>
+               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+           </div>
+       </div>
+       <div id="section2">
+           <h1>화면1</h1>
+           <div>
+               <h2>정신전력교육, 쉽게 어디서나 쓰고 제출하자!</h2>
+               <p>정신전력교육 서비스를 왜 웹으로 만들게 되었는지 토스
+                   홈페이지마냥 약간 간지나게 설명하면 될듯
+               </p>
+               <br><br>
+               <p>
+                   그림도 같이 넣고 ㅇㅇ
+​
+               </p>
+           </div>
+       </div>
+       <div id="section3">
+           <h1>화면2</h1>
+           <h2>이번주의 정신전력왕!!!!</h2>
+           
+           <p>일병 최이현~~~!~!~!~!~!</p>
+           
+       </div>
+       <div id="section4">
+           <h1>지나간 정신전력 교육들 볼 수 있는걸로 넣으면될듯 이미지 슬라이더로ㅇㅇ</h1>
+           <div id="box">
+               <button>왼쪽</button>
+                   <img src="https://picsum.photos/id/237/200/300" alt="temp">
+               <button>오른쪽</button>
+           </div>
+       </div>
+       <div id="section5">
+           <h1>화면4</h1>
+           <p>여기는 뭐넣을지 모르겠다ㅠㅠ</p>
+       </div>
+   </div>
+​
+</body>
+</html>
